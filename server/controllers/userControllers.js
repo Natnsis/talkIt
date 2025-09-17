@@ -1,6 +1,6 @@
 const HttpError = require("../models/errorModel");
 
-const registerUser = async () => {
+const registerUser = async (req, res) => {
   try {
     res.json("register user");
   } catch (error) {
@@ -8,7 +8,7 @@ const registerUser = async () => {
   }
 };
 
-const loginUser = async () => {
+const loginUser = async (req, res) => {
   try {
     res.json("login user");
   } catch (error) {
@@ -16,7 +16,7 @@ const loginUser = async () => {
   }
 };
 
-const getUser = async () => {
+const getUser = async (req, res) => {
   try {
     res.json("getUser user");
   } catch (error) {
@@ -24,7 +24,7 @@ const getUser = async () => {
   }
 };
 
-const getUsers = async () => {
+const getUsers = async (req, res) => {
   try {
     res.json("get users");
   } catch (error) {
@@ -32,7 +32,7 @@ const getUsers = async () => {
   }
 };
 
-const updateUser = async () => {
+const updateUser = async (req, res) => {
   try {
     res.json("update user");
   } catch (error) {
@@ -40,7 +40,7 @@ const updateUser = async () => {
   }
 };
 
-const followUser = async () => {
+const followUser = async (req, res) => {
   try {
     res.json("Follow user");
   } catch (error) {
@@ -48,10 +48,20 @@ const followUser = async () => {
   }
 };
 
-const changeProfilePic = async () => {
+const changeProfilePic = async (req, res) => {
   try {
     res.json("change Pic user");
   } catch (error) {
     return next(new HttpError(error));
   }
+};
+
+module.exports = {
+  changeProfilePic,
+  registerUser,
+  updateUser,
+  followUser,
+  getUser,
+  getUsers,
+  loginUser,
 };
